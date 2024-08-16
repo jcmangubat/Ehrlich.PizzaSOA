@@ -1,4 +1,6 @@
-﻿namespace Ehrlich.PizzaSOA.Domain.Constants;
+﻿using System.ComponentModel;
+
+namespace Ehrlich.PizzaSOA.Domain.Constants;
 
 public class Rules
 {
@@ -22,10 +24,15 @@ public class Rules
 
     public enum PizzaSizesEnum
     {
-        Small,
-        Medium,
-        Large,
-        ExtraLarge,
-        DoubleExtraLarge
+        [Description("Small")]
+        S,
+        [Description("Medium")]
+        M,
+        [Description("Large")]
+        L,
+        [Description("Extra Large")]
+        XL,
+        [Description("Double Extra Large")]
+        XXL
     }
 }

@@ -4,6 +4,7 @@ using Ehrlich.PizzaSOA.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Ehrlich.PizzaSOA.Infrastructure.Persistence.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240816192359_EntityFieldUpdates")]
+    partial class EntityFieldUpdates
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -34,7 +37,7 @@ namespace Ehrlich.PizzaSOA.Infrastructure.Persistence.Migrations
                     b.Property<DateTime>("DateCreated")
                         .ValueGeneratedOnAddOrUpdate()
                         .HasColumnType("DateTime2")
-                        .HasDefaultValue(new DateTime(2024, 8, 17, 4, 21, 26, 219, DateTimeKind.Local).AddTicks(2429))
+                        .HasDefaultValue(new DateTime(2024, 8, 17, 3, 23, 58, 388, DateTimeKind.Local).AddTicks(6321))
                         .HasColumnName("_dateCreated")
                         .HasColumnOrder(501);
 
@@ -76,7 +79,7 @@ namespace Ehrlich.PizzaSOA.Infrastructure.Persistence.Migrations
                     b.Property<DateTime>("DateCreated")
                         .ValueGeneratedOnAddOrUpdate()
                         .HasColumnType("DateTime2")
-                        .HasDefaultValue(new DateTime(2024, 8, 17, 4, 21, 26, 219, DateTimeKind.Local).AddTicks(4990))
+                        .HasDefaultValue(new DateTime(2024, 8, 17, 3, 23, 58, 388, DateTimeKind.Local).AddTicks(8914))
                         .HasColumnName("_dateCreated")
                         .HasColumnOrder(501);
 
@@ -89,10 +92,6 @@ namespace Ehrlich.PizzaSOA.Infrastructure.Persistence.Migrations
                         .HasColumnType("bit")
                         .HasDefaultValue(true)
                         .HasColumnOrder(506);
-
-                    b.Property<int>("OrderDetailNo")
-                        .HasColumnType("int")
-                        .HasColumnName("OrderDetailNo");
 
                     b.Property<Guid>("OrderId")
                         .HasColumnType("uniqueidentifier");
@@ -124,7 +123,7 @@ namespace Ehrlich.PizzaSOA.Infrastructure.Persistence.Migrations
                     b.Property<DateTime>("DateCreated")
                         .ValueGeneratedOnAddOrUpdate()
                         .HasColumnType("DateTime2")
-                        .HasDefaultValue(new DateTime(2024, 8, 17, 4, 21, 26, 218, DateTimeKind.Local).AddTicks(8460))
+                        .HasDefaultValue(new DateTime(2024, 8, 17, 3, 23, 58, 388, DateTimeKind.Local).AddTicks(1837))
                         .HasColumnName("_dateCreated")
                         .HasColumnOrder(501);
 
@@ -184,7 +183,7 @@ namespace Ehrlich.PizzaSOA.Infrastructure.Persistence.Migrations
                     b.Property<DateTime>("DateCreated")
                         .ValueGeneratedOnAddOrUpdate()
                         .HasColumnType("DateTime2")
-                        .HasDefaultValue(new DateTime(2024, 8, 17, 4, 21, 26, 218, DateTimeKind.Local).AddTicks(5829))
+                        .HasDefaultValue(new DateTime(2024, 8, 17, 3, 23, 58, 387, DateTimeKind.Local).AddTicks(8967))
                         .HasColumnName("_dateCreated")
                         .HasColumnOrder(501);
 

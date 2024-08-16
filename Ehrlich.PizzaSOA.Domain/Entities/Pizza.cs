@@ -5,7 +5,8 @@ namespace Ehrlich.PizzaSOA.Domain.Entities;
 
 public class Pizza : GuidKeyedEntity
 {
-    public required string PizzaItemCode { get; set; }    
+    public required string PizzaCode { get; set; }
+    public required string PizzaTypeCode { get; set; }
     public required PizzaSizesEnum Size { get; set; }
     public decimal Price { get; set; }
 

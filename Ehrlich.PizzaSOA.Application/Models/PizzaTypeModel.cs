@@ -1,11 +1,13 @@
-﻿using System.Formats.Asn1;
+﻿using Ehrlich.PizzaSOA.Application.Models.Base;
 
 namespace Ehrlich.PizzaSOA.Application.Models;
 
-public class PizzaTypeModel
+public class PizzaTypeModel : GuidKeyedModel
 {
-    public required string PizzaTypeId { get; set; }
+    public required string PizzaTypeCode { get; set; }
     public required string Name { get; set; }
     public required string Category { get; set; }
     public required string Ingredients { get; set; }
+
+    public virtual IEnumerable<PizzaModel>? Pizzas { get; set; } = [];
 }

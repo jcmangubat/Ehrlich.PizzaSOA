@@ -1,9 +1,12 @@
-﻿namespace Ehrlich.PizzaSOA.Application.Models;
+﻿using Ehrlich.PizzaSOA.Application.Models.Base;
 
-public class OrderDetailModel
+namespace Ehrlich.PizzaSOA.Application.Models;
+
+public class OrderDetailModel : GuidKeyedModel
 {
-    public int OrderDetailsId { get; set; }
-    public int OrderId { get; set; }
-    public required string PizzaId { get; set; }
+    public int OrderDetailNo { get; set; }
+    public int OrderNo { get; set; }
+    public required string PizzaCode { get; set; }
     public required int Quantity { get; set; }
+
 }

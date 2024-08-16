@@ -13,6 +13,7 @@ public class OrderDetailConfiguration(string schema = "dbo")
     {
         base.OnModelCreating(entityBuilder);
 
+        entityBuilder.DefineDbField(x => x.OrderDetailNo, true);
         entityBuilder.DefineDbField(x => x.Quantity, true);
 
         entityBuilder.HasOne(p => p.Pizza)

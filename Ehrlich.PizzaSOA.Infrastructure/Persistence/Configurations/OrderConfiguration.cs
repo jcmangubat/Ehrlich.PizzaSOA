@@ -13,6 +13,7 @@ public class OrderConfiguration(string schema = "dbo")
     {
         base.OnModelCreating(entityBuilder);
 
+        entityBuilder.DefineDbField(x => x.OrderNo, true);
         entityBuilder.DefineDbField(x => x.DateOrdered, true);
         entityBuilder.DefineDbField(x => x.TimeOrdered, true);
     }

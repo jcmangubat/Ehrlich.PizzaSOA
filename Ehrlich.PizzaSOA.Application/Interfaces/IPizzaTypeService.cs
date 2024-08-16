@@ -10,9 +10,9 @@ public interface IPizzaTypeService : IServiceBase<IPizzaTypeService>
 
     Task<PizzaTypeModel?> Get(string pizzaTypeCode);
 
-    Task<IEnumerable<PizzaTypeModel>?> GetListAsync(string pizzaTypeCodePartial);
+    Task<IEnumerable<PizzaTypeModel>?> SearchAsync(string? typeCodePartial, string? namePartial);
 
     /*Task<IEnumerable<PizzaTypeModel>?> GetActivitiesByFilterAsync(Expression<Func<PizzaTypeModel, bool>> filterExpression);*/
 
-    Task ImportAsync(IFormFile file);
+    Task<int> ImportAsync(IFormFile file);
 }

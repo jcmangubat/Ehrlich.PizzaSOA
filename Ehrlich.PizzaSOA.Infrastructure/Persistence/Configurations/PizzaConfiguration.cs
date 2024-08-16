@@ -15,7 +15,9 @@ public class PizzaConfiguration(string schema = "dbo")
     {
         base.OnModelCreating(entityBuilder);
 
-        entityBuilder.DefineDbField(x => x.PizzaItemCode, true, FieldLengths.General.LENGTH20);
+        entityBuilder.DefineDbField(x => x.PizzaCode, true, FieldLengths.General.LENGTH20);
+        entityBuilder.DefineDbField(x => x.PizzaTypeCode, true, FieldLengths.General.LENGTH20);
+
         entityBuilder.DefineDbField(x => x.Size, true);
 
         entityBuilder.DefineDbField(x => x.Price, true, "decimal(18,2)",

@@ -28,6 +28,9 @@ public class Startup(IConfiguration configuration)
 
         // Services
         services.AddTransient<IPizzaTypeService, PizzaTypeService>();
+        services.AddTransient<IPizzaService, PizzaService>();
+        services.AddTransient<IOrderService, OrderService>();
+        services.AddTransient<IOrderDetailService, OrderDetailService>();
 
         // Add AutoMapper services
         services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());

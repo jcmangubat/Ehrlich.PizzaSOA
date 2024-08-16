@@ -2,8 +2,8 @@
 
 public class PizzaModel
 {
-    public string PizzaId { get; set; }
-    public string PizzaTypeId { get; set; }
-    public string Size { get; set; }
-    public decimal Price { get; set; }
+    public required string PizzaId { get; set; }
+    public required string PizzaTypeId { get; set; }
+    public required string Size { get; set; }
+    public required decimal Price { get; set; }
 }

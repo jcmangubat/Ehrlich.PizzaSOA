@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="SMEAppHouse.Core.Patterns.EF" Version="8.0.1" />
+    <PackageReference Include="SMEAppHouse.Core.Patterns.Repo" Version="8.0.2" />
   </ItemGroup>
 
 </Project>

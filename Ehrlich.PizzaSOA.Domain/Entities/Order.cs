@@ -4,7 +4,8 @@ namespace Ehrlich.PizzaSOA.Domain.Entities;
 
 public class Order : GuidKeyedEntity
 {
-    public int OrderId { get; set; }
-    public DateTime Date { get; set; }
-    public TimeSpan Time { get; set; }
+    public required DateTime DateOrdered { get; set; }
+    public required TimeSpan TimeOrdered { get; set; }
+
+    public virtual List<OrderDetail>? OrderDetails { get; set; }
 }

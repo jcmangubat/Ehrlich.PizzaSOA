@@ -8,8 +8,10 @@
 
   <ItemGroup>
     <Folder Include="Persistence\Migrations\" />
-    <Folder Include="Persistence\Repositories\" />
-    <Folder Include="Persistence\Configurations\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Ehrlich.PizzaSOA.Domain\Ehrlich.PizzaSOA.Domain.csproj" />
   </ItemGroup>
 
 </Project>

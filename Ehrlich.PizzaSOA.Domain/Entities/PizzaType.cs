@@ -1,11 +1,14 @@
 ﻿using SMEAppHouse.Core.Patterns.EF.ModelComposites.Abstractions;
+using static Ehrlich.PizzaSOA.Domain.Constants.Rules;
 
 namespace Ehrlich.PizzaSOA.Domain.Entities;
 
 public class PizzaType : GuidKeyedEntity
 {
-    public string PizzaTypeId { get; set; }
-    public string Name { get; set; }
-    public string Category { get; set; }
-    public string Ingredients { get; set; }
+    public required string PizzaTypeCode { get; set; }
+    public required string Name { get; set; }
+    public PizzaTypeCategoriesEnum Category { get; set; }
+    public required string Ingredients { get; set; }
+
+    public virtual List<Pizza>? Pizzas { get; set; }
 }

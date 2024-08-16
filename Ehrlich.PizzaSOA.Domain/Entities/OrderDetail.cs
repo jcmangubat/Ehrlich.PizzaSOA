@@ -4,8 +4,11 @@ namespace Ehrlich.PizzaSOA.Domain.Entities;
 
 public class OrderDetail : GuidKeyedEntity
 {
-    public int OrderDetailsId { get; set; }
-    public int OrderId { get; set; }
-    public string PizzaId { get; set; }
-    public int Quantity { get; set; }
+    public required int Quantity { get; set; }
+
+    public Guid PizzaId { get; set; }
+    public virtual required Pizza Pizza { get; set; }
+
+    public Guid OrderId { get; set; }
+    public virtual required Order Order { get; set; }
 }

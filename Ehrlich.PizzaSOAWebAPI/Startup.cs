@@ -1,4 +1,6 @@
+using Ehrlich.PizzaSOA.Domain.Interfaces.Repositories;
 using Ehrlich.PizzaSOA.Infrastructure.Persistence;
+using Ehrlich.PizzaSOA.Infrastructure.Persistence.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 namespace Ehrlich.PizzaSOA.WebAPI;
@@ -17,6 +19,11 @@ public class Startup(IConfiguration configuration)
         services.AddDbContext<ApplicationDbContext>(options =>
             options.UseSqlServer(connString));
 
+        // Repositories
+        services.AddTransient<IPizzaTypeRepository, PizzaTypeRepository>();
+        services.AddTransient<IPizzaRepository, PizzaRepository>();
+        services.AddTransient<IOrderRepository, OrderRepository>();
+        services.AddTransient<IOrderDetailRepository, OrderDetailRepository>();
 
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         services.AddEndpointsApiExplorer();

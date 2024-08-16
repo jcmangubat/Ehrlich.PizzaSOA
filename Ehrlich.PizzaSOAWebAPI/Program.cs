@@ -1,16 +1,30 @@
-namespace Ehrlich.PizzaSOA.WebAPI;
+using dotenv.net;
+using Ehrlich.PizzaSOA.WebAPI;
+using Serilog;
+using Serilog.Events;
 
-public class Program
-{
-    public static void Main(string[] args)
+var builder = Host.CreateDefaultBuilder(args)
+    .ConfigureAppConfiguration((context, config) =>
     {
-        CreateHostBuilder(args).Build().Run();
-    }
+        DotEnv.Load();
+        config.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+              .AddEnvironmentVariables();
+    })
+    .ConfigureWebHostDefaults(webBuilder =>
+    {
+        webBuilder.UseStartup<Startup>();
+    })
+    .ConfigureLogging(logging =>
+    {
+        logging.ClearProviders();
+        logging.AddConsole();
+    })
+    .UseSerilog((context, configuration) =>
+    {
+        configuration.ReadFrom.Configuration(context.Configuration)
+                     .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
+                     .MinimumLevel.Override("System", LogEventLevel.Warning)
+                     .MinimumLevel.Override("System.Net.Mail", LogEventLevel.Error);
+    });
 
-    public static IHostBuilder CreateHostBuilder(string[] args) =>
-        Host.CreateDefaultBuilder(args)
-            .ConfigureWebHostDefaults(webBuilder =>
-            {
-                webBuilder.UseStartup<Startup>();
-            });
-}
+builder.Build().Run();

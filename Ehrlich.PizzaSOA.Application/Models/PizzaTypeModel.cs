@@ -1,4 +1,6 @@
-﻿namespace Ehrlich.PizzaSOA.Application.Models;
+﻿using System.Formats.Asn1;
+
+namespace Ehrlich.PizzaSOA.Application.Models;
 
 public class PizzaTypeModel
 {

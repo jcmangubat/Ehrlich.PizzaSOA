@@ -22,9 +22,11 @@ var builder = Host.CreateDefaultBuilder(args)
     .UseSerilog((context, configuration) =>
     {
         configuration.ReadFrom.Configuration(context.Configuration)
-                     .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
-                     .MinimumLevel.Override("System", LogEventLevel.Warning)
-                     .MinimumLevel.Override("System.Net.Mail", LogEventLevel.Error);
+                        .WriteTo.Console() // Ensure you have a console sink
+                        .WriteTo.File("logs/Ehrlich.PizzaSOA-Logs.txt", rollingInterval: RollingInterval.Day) // File sink configuration
+                        .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
+                        .MinimumLevel.Override("System", LogEventLevel.Warning)
+                        .MinimumLevel.Override("System.Net.Mail", LogEventLevel.Error);
     });
 
 builder.Build().Run();

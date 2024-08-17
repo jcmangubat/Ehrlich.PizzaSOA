@@ -1,5 +1,6 @@
 ﻿using Ehrlich.PizzaSOA.Application.Interfaces;
 using Ehrlich.PizzaSOA.WebAPI.Controllers.Abstraction;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SMEAppHouse.Core.CodeKits.Helpers;
 
@@ -24,6 +25,7 @@ public class OrderController(ILogger<OrderController> logger, IOrderService orde
     /// <param name="orderId">The unique identifier of the order.</param>
     /// <returns>A order model if found, otherwise NotFound.</returns>
     [HttpGet("id/{orderId}")]
+    [Authorize]
     public async Task<IActionResult> GetOrderById(Guid orderId)
     {
         try

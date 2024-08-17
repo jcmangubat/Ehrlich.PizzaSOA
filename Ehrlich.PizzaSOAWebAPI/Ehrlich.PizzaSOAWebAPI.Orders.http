@@ -1,0 +1,35 @@
+@hostAddress = https://localhost:7127
+@orderId = 7a7d4f14-52f1-415f-3ed9-08dcbe2921da
+
+### Search orders by criteria
+GET {{hostAddress}}/api/Order/search
+Accept: application/json
+
+?orderNo=12345
+&orderDateLow=2024-01-01T00:00:00
+&orderDateHigh=2024-01-31T23:59:59
+&orderTimeLow=10:00:00
+&orderTimeHigh=14:00:00
+
+### Get order by ID
+GET {{hostAddress}}/api/Order/id/{{orderId}}
+
+### Import orders from a CSV file
+POST {{hostAddress}}/api/Order/import
+Content-Type: multipart/form-data; boundary=----CSVboundary
+
+----CSVboundary
+Content-Disposition: form-data; name="file"; filename="orders.csv"
+Content-Type: text/csv
+
+order_id,date,time
+1,01/01/2015,11:38:36
+2,01/01/2015,11:57:40
+3,01/01/2015,12:12:28
+4,01/01/2015,12:16:31
+5,01/01/2015,12:21:30
+6,01/01/2015,12:29:36
+7,01/01/2015,12:50:37
+8,01/01/2015,12:51:37
+----CSVboundary
+

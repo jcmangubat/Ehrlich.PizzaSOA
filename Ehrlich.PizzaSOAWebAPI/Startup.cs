@@ -3,8 +3,12 @@ using Ehrlich.PizzaSOA.Application.Services;
 using Ehrlich.PizzaSOA.Domain.Interfaces.Repositories;
 using Ehrlich.PizzaSOA.Infrastructure.Persistence;
 using Ehrlich.PizzaSOA.Infrastructure.Persistence.Repositories;
+using Ehrlich.PizzaSOA.WebAPI.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using System.Text;
 
 namespace Ehrlich.PizzaSOA.WebAPI;
 
@@ -35,14 +39,61 @@ public class Startup(IConfiguration configuration)
         // Add AutoMapper services
         services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
+        services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
+                {
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuer = true,
+                        ValidateAudience = true,
+                        ValidateLifetime = true,
+                        ValidateIssuerSigningKey = true,
+                        ValidIssuer = Configuration["Jwt:Issuer"],
+                        ValidAudience = Configuration["Jwt:Audience"],
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
+                    };
+                });
+
         services.AddControllers();
+
+        services.AddSingleton<JwtTokenService>();
 
         // Add Swagger services
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         services.AddEndpointsApiExplorer();
         services.AddSwaggerGen(c =>
         {
-            c.SwaggerDoc("v1", new OpenApiInfo { Title = "Ehrlich Pizza Sales Order Analytics Web API", Version = "v1" });
+            c.SwaggerDoc("v1", new OpenApiInfo
+            {
+                Title = "Ehrlich Pizza Sales Order Analytics Web API",
+                Version = "v1"
+            });
+
+            // Add security definition for JWT Bearer Authentication
+            c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+            {
+                Name = "Authorization",
+                Type = SecuritySchemeType.Http,
+                Scheme = "bearer",
+                BearerFormat = "JWT",
+                In = ParameterLocation.Header,
+                Description = "Please enter 'Bearer' followed by a space and then your token."
+            });
+
+            c.AddSecurityRequirement(new OpenApiSecurityRequirement
+            {
+                {
+                    new OpenApiSecurityScheme
+                    {
+                        Reference = new OpenApiReference
+                        {
+                            Type = ReferenceType.SecurityScheme,
+                            Id = "Bearer"
+                        }
+                    },
+                    Array.Empty<string>()
+                }
+            });
         });
     }
 
@@ -62,6 +113,7 @@ public class Startup(IConfiguration configuration)
 
         app.UseRouting();
 
+        app.UseAuthentication();
         app.UseAuthorization();
 
         // Enable Swagger middleware

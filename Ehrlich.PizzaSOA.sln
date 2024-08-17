@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ehrlich.PizzaSOA.WebAPI", "Ehrlich.PizzaSOAWebAPI\Ehrlich.PizzaSOA.WebAPI.csproj", "{AD83E6CC-3022-432E-A3FF-64F9E6CE5044}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ehrlich.PizzaSOA.WebAPI", "Ehrlich.PizzaSOAWebAPI\Ehrlich.PizzaSOA.WebAPI.csproj", "{AD83E6CC-3022-432E-A3FF-64F9E6CE5044}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SalesOrderAnalytics", "SalesOrderAnalytics", "{7C3F2FA6-1CDD-41C5-8909-3F92704DE56E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dependencies", "Dependencies", "{E83EAA0E-28CE-4A5D-9C80-A799C7A21A36}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ehrlich.PizzaSOA.Application", "Ehrlich.PizzaSOA.Application\Ehrlich.PizzaSOA.Application.csproj", "{FB06106E-7BEE-4B0F-9345-43AE44747957}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ehrlich.PizzaSOA.Application", "Ehrlich.PizzaSOA.Application\Ehrlich.PizzaSOA.Application.csproj", "{FB06106E-7BEE-4B0F-9345-43AE44747957}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ehrlich.PizzaSOA.Domain", "Ehrlich.PizzaSOA.Domain\Ehrlich.PizzaSOA.Domain.csproj", "{8CF871F2-3DDC-4CEC-81FE-3BA077FDE78A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ehrlich.PizzaSOA.Domain", "Ehrlich.PizzaSOA.Domain\Ehrlich.PizzaSOA.Domain.csproj", "{8CF871F2-3DDC-4CEC-81FE-3BA077FDE78A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ehrlich.PizzaSOA.Infrastructure", "Ehrlich.PizzaSOA.Infrastructure\Ehrlich.PizzaSOA.Infrastructure.csproj", "{E5C5A132-7E47-4766-AB63-553BE56A6B16}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ehrlich.PizzaSOA.Infrastructure", "Ehrlich.PizzaSOA.Infrastructure\Ehrlich.PizzaSOA.Infrastructure.csproj", "{E5C5A132-7E47-4766-AB63-553BE56A6B16}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{4A02213F-FD01-4031-9997-773FD0C962CE}"
 EndProject

@@ -15,7 +15,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ehrlich.PizzaSOA.Domain", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ehrlich.PizzaSOA.Infrastructure", "Ehrlich.PizzaSOA.Infrastructure\Ehrlich.PizzaSOA.Infrastructure.csproj", "{E5C5A132-7E47-4766-AB63-553BE56A6B16}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{4A02213F-FD01-4031-9997-773FD0C962CE}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{4A02213F-FD01-4031-9997-773FD0C962CE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ehrlich.PizzaSOA.UnitTest", "Ehrlich.PizzaSOA.UnitTest\Ehrlich.PizzaSOA.UnitTest.csproj", "{CF1D2DE6-DF2C-4A4C-9FE7-714CD3E01253}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ehrlich.PizzaSOA.IntegrationTest", "Ehrlich.PizzaSOA.IntegrationTest\Ehrlich.PizzaSOA.IntegrationTest.csproj", "{1E0E8578-F3BA-49E8-88E2-4230D8D56F72}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,14 @@ Global
 		{E5C5A132-7E47-4766-AB63-553BE56A6B16}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E5C5A132-7E47-4766-AB63-553BE56A6B16}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E5C5A132-7E47-4766-AB63-553BE56A6B16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF1D2DE6-DF2C-4A4C-9FE7-714CD3E01253}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF1D2DE6-DF2C-4A4C-9FE7-714CD3E01253}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF1D2DE6-DF2C-4A4C-9FE7-714CD3E01253}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF1D2DE6-DF2C-4A4C-9FE7-714CD3E01253}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E0E8578-F3BA-49E8-88E2-4230D8D56F72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E0E8578-F3BA-49E8-88E2-4230D8D56F72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E0E8578-F3BA-49E8-88E2-4230D8D56F72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E0E8578-F3BA-49E8-88E2-4230D8D56F72}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -49,6 +61,8 @@ Global
 		{FB06106E-7BEE-4B0F-9345-43AE44747957} = {E83EAA0E-28CE-4A5D-9C80-A799C7A21A36}
 		{8CF871F2-3DDC-4CEC-81FE-3BA077FDE78A} = {E83EAA0E-28CE-4A5D-9C80-A799C7A21A36}
 		{E5C5A132-7E47-4766-AB63-553BE56A6B16} = {E83EAA0E-28CE-4A5D-9C80-A799C7A21A36}
+		{CF1D2DE6-DF2C-4A4C-9FE7-714CD3E01253} = {4A02213F-FD01-4031-9997-773FD0C962CE}
+		{1E0E8578-F3BA-49E8-88E2-4230D8D56F72} = {4A02213F-FD01-4031-9997-773FD0C962CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7294E6FC-88EA-45F9-8691-92AC5F2FD1BC}

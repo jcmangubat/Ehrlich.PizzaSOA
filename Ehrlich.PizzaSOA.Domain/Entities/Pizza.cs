@@ -11,8 +11,8 @@ public class Pizza : GuidKeyedEntity
     public decimal Price { get; set; }
 
 
-    public Guid PizzaTypeId { get; set; }
-    public virtual required PizzaType PizzaType { get; set; }
+    public required Guid PizzaTypeId { get; set; }
+    public virtual PizzaType? PizzaType { get; set; }
 
     public virtual List<OrderDetail>? OrderDetails { get; set; }
 }

@@ -22,7 +22,7 @@ public class OrderControllerImportTests(CustomWebApplicationFactory<Startup> fac
     public async Task ImportOrders_WithValidFile_ReturnsOkWithImportCount()
     {
         // Arrange
-        var fileContent = "order_id,date,time\n1,01/01/2015,11:38:36\n2,01/01/2015,11:57:40";
+        var fileContent = "order_id,date,time\n23,01/01/2015,11:38:36\n24,01/01/2015,11:57:40";
         var content = new MultipartFormDataContent();
         var fileStream = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(fileContent));
         var fileContentStream = new StreamContent(fileStream);
